@@ -10,8 +10,11 @@ public class Bird : MonoBehaviour
     
     private Rigidbody rb;
 
-    public float height;
+    private float height;
+
+    public float regularHieght;
     public float speed;
+    public float attackRange;
 
     void Awake()
     {
@@ -23,7 +26,13 @@ public class Bird : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x, height, transform.position.z);
 
-        FollowPlayer();
+        if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(target.transform.position.x, target.transform.position.z))<= attackRange)
+        {
+            Peck();
+        } else
+        {
+            FollowPlayer();
+        }
     } 
 
     void FollowPlayer()
@@ -31,5 +40,22 @@ public class Bird : MonoBehaviour
         transform.LookAt(target);
         rb.velocity=speed*transform.forward;
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x*0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+
+        height = Mathf.Lerp(height, regularHieght, Time.deltaTime);
+    }
+
+    void Peck()
+    {
+        rb.velocity = Vector3.zero;
+
+        transform.LookAt(target);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x*0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+
+        height = Mathf.Lerp(height, target.position.y+4, Time.deltaTime);
+
+        if (Mathf.Abs(height-target.position.y)< 5)
+        {
+            anim.SetTrigger("Peck");
+        }
     }
 }
