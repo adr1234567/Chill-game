@@ -6,6 +6,7 @@ public class Rat : MonoBehaviour
 {
     public Animator anim;
     public Transform target;
+    public float height;
     
     private Rigidbody rb;
 
@@ -34,6 +35,7 @@ public class Rat : MonoBehaviour
         {
             FollowPlayer();
         }
+        transform.position = new Vector3(transform.position.x, height, transform.position.z);
     } 
 
     void FollowPlayer()
