@@ -34,7 +34,7 @@ public class DayNIght : MonoBehaviour
     void Update()
     {
         timeOfDay+=Time.deltaTime*daySpeed;
-        //timeOfDay = time;
+        time+=Time.deltaTime;
 
         if (timeOfDay > 24)
         {

@@ -320,67 +320,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1623514600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &703867874
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 703867876}
-  - component: {fileID: 703867875}
-  m_Layer: 0
-  m_Name: Enemy Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &703867875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703867874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21a30354809da3a519c78a92465218c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: {fileID: 1680808372}
-  mapWidth: 100
-  mapHeight: 100
-  enemiesDay:
-  - obj: {fileID: 3543553874352052769, guid: 8f78d60206df53172909e1531aa065c7, type: 3}
-    startHeight: 30
-  - obj: {fileID: 1323213660038838077, guid: 13d6d6db3ee990f74b5b764384878cbe, type: 3}
-    startHeight: -7
-  enemiesNight:
-  - obj: {fileID: 1323213660038838077, guid: 13d6d6db3ee990f74b5b764384878cbe, type: 3}
-    startHeight: -7
-  - obj: {fileID: 3543553874352052769, guid: 8f78d60206df53172909e1531aa065c7, type: 3}
-    startHeight: 30
-  - obj: {fileID: 1323213660038838077, guid: 843d57cd72a3af79cba93aac1952477e, type: 3}
-    startHeight: -7
-  - obj: {fileID: 1323213660038838077, guid: 843d57cd72a3af79cba93aac1952477e, type: 3}
-    startHeight: -7
---- !u!4 &703867876
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703867874}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5105119, y: 1.8143079, z: 0.42999983}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &869630533
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +544,7 @@ Transform:
   m_GameObject: {fileID: 1095920067}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -8.51, z: 0}
+  m_LocalPosition: {x: 0, y: -8.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1276,10 +1215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379ce1cd1f3b34bfdbc012b45fef8f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  round: 0
   time: 0
   sun: {fileID: 2111836782}
-  daySpeed: 0.2
+  daySpeed: 1
   timeOfDay: 0
   day: 0
   DayNightIndicator: {fileID: 1326753072}
@@ -1855,4 +1793,3 @@ SceneRoots:
   - {fileID: 1680808371}
   - {fileID: 1234173793}
   - {fileID: 1339730208}
-  - {fileID: 703867876}

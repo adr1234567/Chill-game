@@ -1,35 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
-public class Bird : MonoBehaviour
+public class Rat : MonoBehaviour
 {
     public Animator anim;
     public Transform target;
+    public float height;
     
     private Rigidbody rb;
 
-    private float height;
-
-    public float regularHieght;
     public float speed;
     public float attackRange;
     public float damage;
+    public float startingHealth;
 
-    public GameObject peckObject;
+    public GameObject biteObject;
 
     void Awake()
     {
         rb  = GetComponent<Rigidbody>();
         target = GameObject.Find("Player").transform;
+
+        transform.GetChild(0).GetComponent<HEalth>().health = startingHealth;
     }
 
 
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, height, transform.position.z);
-
         if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(target.transform.position.x, target.transform.position.z))<= attackRange)
         {
             Peck();
@@ -37,6 +35,7 @@ public class Bird : MonoBehaviour
         {
             FollowPlayer();
         }
+        transform.position = new Vector3(transform.position.x, height, transform.position.z);
     } 
 
     void FollowPlayer()
@@ -44,8 +43,6 @@ public class Bird : MonoBehaviour
         transform.LookAt(target);
         rb.velocity=speed*transform.forward;
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x*0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-
-        height = Mathf.Lerp(height, regularHieght, Time.deltaTime);
     }
 
     void Peck()
@@ -55,20 +52,15 @@ public class Bird : MonoBehaviour
         transform.LookAt(target);
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x*0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 
-        height = Mathf.Lerp(height, target.position.y+9, Time.deltaTime);
-
-        if (Mathf.Abs(height-target.position.y)< 11)
-        {
-            anim.SetTrigger("Peck");
-        }
+        anim.SetTrigger("Bite");
 
         AnimatorClipInfo[ ] clip = anim.GetCurrentAnimatorClipInfo(0);
         int frame = (int) (clip[0].weight * (clip[0].clip.length * clip[0].clip.frameRate));
 
-        if (frame >= 12 & frame <= 16)
+        if (frame >= 12 & frame <= 14)
         {
-            peckObject.SetActive(true);
-            Collider[] peckTargets = Physics.OverlapSphere(peckObject.transform.position, 1);
+            biteObject.SetActive(true);
+            Collider[] peckTargets = Physics.OverlapSphere(biteObject.transform.position, 3);
 
             for(int i = 0; i < peckTargets.Length; i++) {
                 if (peckTargets[i].gameObject.tag == "Player")
@@ -79,7 +71,7 @@ public class Bird : MonoBehaviour
             
         } else
         {
-            peckObject.SetActive(false);
+            biteObject.SetActive(false);
         }
     }
 }
