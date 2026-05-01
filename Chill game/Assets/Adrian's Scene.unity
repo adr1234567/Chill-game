@@ -352,10 +352,19 @@ MonoBehaviour:
   time: {fileID: 1680808372}
   mapWidth: 100
   mapHeight: 100
-  enemies:
+  enemiesDay:
   - obj: {fileID: 3543553874352052769, guid: 8f78d60206df53172909e1531aa065c7, type: 3}
     startHeight: 30
   - obj: {fileID: 1323213660038838077, guid: 13d6d6db3ee990f74b5b764384878cbe, type: 3}
+    startHeight: -7
+  enemiesNight:
+  - obj: {fileID: 1323213660038838077, guid: 13d6d6db3ee990f74b5b764384878cbe, type: 3}
+    startHeight: -7
+  - obj: {fileID: 3543553874352052769, guid: 8f78d60206df53172909e1531aa065c7, type: 3}
+    startHeight: 30
+  - obj: {fileID: 1323213660038838077, guid: 843d57cd72a3af79cba93aac1952477e, type: 3}
+    startHeight: -7
+  - obj: {fileID: 1323213660038838077, guid: 843d57cd72a3af79cba93aac1952477e, type: 3}
     startHeight: -7
 --- !u!4 &703867876
 Transform:
