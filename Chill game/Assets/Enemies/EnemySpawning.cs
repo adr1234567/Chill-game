@@ -15,17 +15,14 @@ public class EnemySpawning : MonoBehaviour
 
     void Update()
     {    
-        if (Random.Range(0, 3000/(1+(time.round/100)))==2)
+        if (Random.Range(0, 500/(1+(time.round/100)))+1==1)
         {
-            Debug.Log("o");
             if (time.day)
             {
-                Debug.Log("d");
                 int enemyIndex = Random.Range(0, enemiesDay.Count);
                 Instantiate(enemiesDay[enemyIndex].obj, new Vector3(Random.Range(-mapWidth/2, mapWidth/2), Random.Range(-mapHeight/2, mapHeight/2), enemiesDay[enemyIndex].startHeight), transform.rotation);
             } else
             {
-                Debug.Log("n");
                 int enemyIndex = Random.Range(0, enemiesNight.Count);
                 Instantiate(enemiesNight[enemyIndex].obj, new Vector3(Random.Range(-mapWidth/2, mapWidth/2), Random.Range(-mapHeight/2, mapHeight/2), enemiesNight[enemyIndex].startHeight), transform.rotation);
             }

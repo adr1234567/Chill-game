@@ -15,6 +15,8 @@ public class Bird : MonoBehaviour
     public float damage;
     public float startingHealth;
 
+    public float score;
+
     public GameObject peckObject;
 
     void Awake()

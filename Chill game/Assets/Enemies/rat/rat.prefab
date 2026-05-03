@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 3482827647400182434}
   - component: {fileID: 7200477964985561143}
   - component: {fileID: 2907465189031662612}
+  - component: {fileID: -7407164637827523982}
   m_Layer: 0
   m_Name: rat
   m_TagString: Enemy
@@ -368,7 +369,22 @@ MonoBehaviour:
   attackRange: 7
   damage: 10
   startingHealth: 50
+  score: 0
   biteObject: {fileID: 8238931966306841581}
+--- !u!114 &-7407164637827523982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323213660038838077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46b4553d442cf81b85faadf3e4cf019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreAddition: 25
+  scoreMultiplier: 1.1
 --- !u!1 &1354106022027268709
 GameObject:
   m_ObjectHideFlags: 0
