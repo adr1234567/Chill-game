@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 3482827647400182434}
   - component: {fileID: 7200477964985561143}
   - component: {fileID: 2907465189031662612}
+  - component: {fileID: -6131936379892685458}
   m_Layer: 0
   m_Name: rat night
   m_TagString: Enemy
@@ -368,7 +369,22 @@ MonoBehaviour:
   attackRange: 7
   damage: 20
   startingHealth: 75
+  score: 0
   biteObject: {fileID: 8238931966306841581}
+--- !u!114 &-6131936379892685458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323213660038838077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46b4553d442cf81b85faadf3e4cf019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreAddition: 100
+  scoreMultiplier: 1.3
 --- !u!1 &1354106022027268709
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ public class Bullet : MonoBehaviour
         if (col.gameObject.tag=="Enemy")
         {
             col.transform.parent.gameObject.GetComponent<HEalth>().health-=damage;
+            GameObject.Find("Score").GetComponent<Score>().score += col.transform.parent.parent.gameObject.GetComponent<ScoreValue>().scoreAddition * Random.Range(1, 1.5f);
+            GameObject.Find("Score").GetComponent<Score>().score *= col.transform.parent.parent.gameObject.GetComponent<ScoreValue>().scoreMultiplier;
         }
         Destroy(gameObject);
     }

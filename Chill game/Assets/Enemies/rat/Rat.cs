@@ -15,6 +15,8 @@ public class Rat : MonoBehaviour
     public float damage;
     public float startingHealth;
 
+    public float score;
+
     public GameObject biteObject;
 
     void Awake()
